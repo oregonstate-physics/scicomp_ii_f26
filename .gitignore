@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+notebooks/data
+notebooks/cifar_net.pth
+.ipynb_checkpoints/
+**/.DS_Store
+cache/
+*.mp3
