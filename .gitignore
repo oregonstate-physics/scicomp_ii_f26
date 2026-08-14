@@ -6,3 +6,14 @@ notebooks/cifar_net.pth
 **/.DS_Store
 cache/
 *.mp3
+
+# The publish workflow's deploy key. Generating it leaves the pair in the repo
+# root (see the setup notes at the top of .github/workflows/publish-student-copy.yml).
+# It has never been committed and must not be: the private half is already
+# installed as the STUDENT_REPO_DEPLOY_KEY secret, so the local copy is only a
+# spare, and this repo publishes to a public one.
+student_deploy_key
+student_deploy_key.pub
+*.pem
+id_ed25519
+id_ed25519.pub
