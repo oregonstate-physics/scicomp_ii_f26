@@ -7,12 +7,31 @@ It is worth **10% of your grade**, and it is checked for *completion only*. Nobo
 looking at whether your answers are right. What is being asked is that you worked through
 the material.
 
+## Once, at the start of term
+
+Clone the class repository somewhere **outside** this one. It is public, so this needs
+no login and no key:
+
+```
+git clone https://github.com/oregonstate-physics/scicomp_ii_f26.git
+```
+
+That is your read-only copy of the course: every lecture notebook, under
+`notebooks/week-01/` … `week-10/`. You never edit it and never push to it — when new
+material appears, `git pull` inside it brings it down.
+
 ## What to do each week
 
-1. Get that week's notebook(s) from the class repository.
-2. **Copy them into this repository** before you start editing. Work on the copy.
-3. Work through them — in class, and finish afterwards if you ran out of time.
-4. Commit and push.
+1. **Copy** that week's notebook(s) out of the class repo and into this one:
+
+   ```
+   cp ../scicomp_ii_f26/notebooks/week-03/*.ipynb .
+   ```
+
+   Copy, not move, and always work on the copy. Editing the class repo directly means
+   your work is overwritten the next time you pull.
+2. Work through them — in class, and finish afterwards if you ran out of time.
+3. Commit and push **this** repository.
 
 You can arrange the files however you like. Keep the filenames as they are, but put them
 in `week-03/` folders or leave them all at the top level — the checker searches the whole

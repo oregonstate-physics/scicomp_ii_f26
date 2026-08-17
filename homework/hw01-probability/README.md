@@ -1,6 +1,6 @@
 # HW 1 — Probability
 
-The assignment itself is in [`notebooks/probability.ipynb`](notebooks/probability.ipynb):
+The assignment itself is in [`probability.ipynb`](probability.ipynb):
 three problems on conditional probability, transforming distributions, and the Gaussian.
 
 ## Recording your answers
