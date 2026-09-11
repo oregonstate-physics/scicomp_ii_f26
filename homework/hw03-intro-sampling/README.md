@@ -50,6 +50,18 @@ or using fewer samples than the problem specifies.
 Passing the checker is a small part of the grade and is not evidence on its own — the
 reasoning in your notebook and write-up is what is being assessed.
 
+### Where to find your result
+
+The checker runs on every push you make.  **Its verdict is in this repository's
+Releases tab, not the Actions tab.**
+
+- **Releases** — one entry per push, newest first.  Open the newest one: it lists which
+  checks passed, and for anything that failed, the reason.
+- **The mark beside your latest commit** — a green tick or a red cross, the same verdict
+  at a glance.
+- **A green check in the Actions tab does not mean you passed.**  It only means the
+  checker ran.  The result is in the Release.
+
 ## Graduate Students
 
 4. Revisit the importance sampling example from the Intro to Sampling notebook from class.  There we demonstrated the use of importance sampling to estimate the expectation value of some function of our random variable.  We could also use the weights we computed to probabilistically choose samples from the sampling distribution to keep, in an effort to "reweigh" the sampling distribution to correspond to the target distribution.  Try to implement this, and see if your resampled distribution's histogram matches the target distribution's probability density function.

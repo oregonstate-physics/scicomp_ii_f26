@@ -55,6 +55,18 @@ reasoning in your notebook and write-up is what is being assessed.  Problem 1 in
 particular is graded on the derivation; getting the number right without the tree
 diagram earns very little.
 
+### Where to find your result
+
+The checker runs on every push you make.  **Its verdict is in this repository's
+Releases tab, not the Actions tab.**
+
+- **Releases** — one entry per push, newest first.  Open the newest one: it lists which
+  checks passed, and for anything that failed, the reason.
+- **The mark beside your latest commit** — a green tick or a red cross, the same verdict
+  at a glance.
+- **A green check in the Actions tab does not mean you passed.**  It only means the
+  checker ran.  The result is in the Release.
+
 ## Graduate Students
 
 Problem 3 gave you $\mu$ and $\sigma$ and asked for a tail fraction, so the answer was

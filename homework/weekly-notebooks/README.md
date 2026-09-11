@@ -67,6 +67,21 @@ what is being asked for; there are no extra marks for the last cell.
 That is the term not having happened yet, not a problem with your work. Week 7 cannot be
 complete in week 3. What matters is the state at the end.
 
+### Where to find your result
+
+The check runs on every push you make. **Its verdict is in this repository's Releases
+tab, not the Actions tab.**
+
+- **Releases** — one entry per push, newest first. Open the newest one: one line per
+  week, so you can see exactly which weeks are counted as done.
+- **The mark beside your latest commit** — the same verdict at a glance.
+- **A green check in the Actions tab does not mean you are complete.** It only means the
+  check ran. The result is in the Release.
+
+Each week is worth a tenth of this repository's score, so expect the number to climb as
+the term goes on. It will show as red for most of the term, which is exactly what a
+partly finished term looks like — there is no need to report it.
+
 ## A warning worth reading once
 
 **Do not set up `nbstripout`, or any git filter that clears notebook outputs.** It is

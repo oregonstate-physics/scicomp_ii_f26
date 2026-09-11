@@ -42,6 +42,18 @@ anything. Drawing 10,000 costs nothing and tightens it considerably — a good h
 notice now, because the same argument returns for MCMC, where the number of samples you
 have and the number you *effectively* have are not the same thing.
 
+### Where to find your result
+
+The checker runs on every push you make.  **Its verdict is in this repository's
+Releases tab, not the Actions tab.**
+
+- **Releases** — one entry per push, newest first.  Open the newest one: it lists which
+  checks passed, and for anything that failed, the reason.
+- **The mark beside your latest commit** — a green tick or a red cross, the same verdict
+  at a glance.
+- **A green check in the Actions tab does not mean you passed.**  It only means the
+  checker ran.  The result is in the Release.
+
 ## Graduate Students
 Repeat the Gaia linear regression analysis from the 564 portion of last week's homework, this time using `NumPyro`.
 

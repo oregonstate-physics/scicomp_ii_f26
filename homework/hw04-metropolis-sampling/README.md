@@ -59,6 +59,18 @@ A single step size used for both parameters will not get you there at any value.
 The graduate section is not auto-checked — it involves a cut made by eye, so there is no
 single right answer to compare against.
 
+### Where to find your result
+
+The checker runs on every push you make.  **Its verdict is in this repository's
+Releases tab, not the Actions tab.**
+
+- **Releases** — one entry per push, newest first.  Open the newest one: it lists which
+  checks passed, and for anything that failed, the reason.
+- **The mark beside your latest commit** — a green tick or a red cross, the same verdict
+  at a glance.
+- **A green check in the Actions tab does not mean you passed.**  It only means the
+  checker ran.  The result is in the Release.
+
 ## Graduate Students
 
 Use the same technique for constraining a linear model connecting the color and brightness of nearby main sequence stars observed by Gaia (parallax > 40 mas).  To do this you will need to:
