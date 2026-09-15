@@ -1,7 +1,7 @@
 # HW 0 — Getting started
 
-Work through `notebooks/getting-started.ipynb`. It sets up your environment and walks
-through the tools the course uses.
+Work through `getting-started.ipynb`. It sets up your environment and walks through the
+tools the course uses.
 
 This assignment is checked for **completion only** — that you did it, not whether any
 particular answer is right.

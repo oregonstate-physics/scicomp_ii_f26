@@ -1,26 +1,25 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/python:dev-3.10-bullseye",
-  "name": "OSU SciCompII Fall2025",
-  "settings": {
-        "python.pythonPath": "/usr/local/bin/python",
-        "terminal.integrated.shell.linux": "/bin/bash"
-    },
+  "name": "OSU Scientific Computing II",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bookworm",
   "features": {
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-        "packages": "libhdf5-dev,ffmpeg"
-    },
+      "packages": "libhdf5-dev,ffmpeg"
+    }
   },
   "hostRequirements": {
     "cpus": 2
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "python3 -m pip install -r requirements.txt",
+  "updateContentCommand": "python3 -m pip install --upgrade pip && python3 -m pip install -r requirements.txt",
   "postCreateCommand": "",
   "customizations": {
     "codespaces": {
       "openFiles": []
     },
     "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      },
       "extensions": [
         "ms-toolsai.jupyter",
         "ms-python.python"

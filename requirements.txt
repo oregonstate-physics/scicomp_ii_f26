@@ -1,94 +1,50 @@
-absl-py
-appnope
-arviz
-astroml
-astropy
-asttokens
-backcall
-cached-property
-chex
-clu
-comm
-contextlib2
-contourpy
-corner
-cycler
-daft
-debugpy
-decorator
-dm-tree
-etils
-executing
-flax
-fonttools
-h5netcdf
-h5py
-importlib-metadata
-importlib-resources
-ipykernel
-ipython
-ipywidgets
-jax
-jaxlib
-jedi
-joblib
-jupyter_client
-jupyter_core
-jupyterlab-widgets
-kiwisolver
-markdown-it-py
-matplotlib
-matplotlib-inline
-mdurl
-ml-collections
-ml-dtypes
-msgpack
-multipledispatch
-nest-asyncio
+# Scientific Computing II — direct dependencies.
+#
+# This is the authoritative list. environment.yml and .devcontainer/ both install
+# FROM this file, so there is one set of packages, not three that drift apart.
+#
+# Direct dependencies only: pip resolves the rest. The previous version of this
+# file was a `pip freeze` dump, which meant transitive packages (and two that are
+# no longer maintained) were pinned here as if the course used them.
+
+# --- core ---
 numpy
-numpyro
-opt-einsum
-optax
-orbax-checkpoint
-packaging
-pandas
-parso
-pexpect
-pickleshare
-Pillow
-platformdirs
-prompt-toolkit
-psutil
-ptyprocess
-pure-eval
-pydub
-pyerfa
-Pygments
-pymc3
-pyparsing
-python-dateutil
-pytz
-PyYAML
-pyzmq
-rich
-scikit-learn
 scipy
+pandas
+matplotlib
 seaborn
-six
-stack-data
+
+# --- astronomy ---
+astropy
+astroML
+corner
+daft                    # drawing graphical models (week 8)
+
+# --- Bayesian inference ---
+numpyro
+jax
+arviz
+
+# --- machine learning ---
+scikit-learn
+flax
+optax
+clu                     # training loops for the Flax notebooks (weeks 8-9)
+ml-collections
 tensorflow
-tensorflow_datasets
-tensorstore
-threadpoolctl
-toolz
-tornado
+tensorflow-datasets
+
+# --- signal processing ---
+gwpy                    # LIGO strain data (week 10); was missing, so
+                        # week-10/03-notch-filters-ligo.ipynb could not run
+pydub                   # audio rendering (week 10); needs ffmpeg on the system
+
+# --- notebook environment ---
+jupyterlab
+ipykernel
+ipywidgets
 tqdm
-traitlets
-typing_extensions
-tzdata
-wcwidth
-widgetsnbextension
-wrapt
-xarray
-xarray-einstats
-zipp
+
+# Not installed by default, used only by notebooks/extras/ and
+# homework/extras/: pycbc, healpy. Install them by hand if you work through
+# those.
