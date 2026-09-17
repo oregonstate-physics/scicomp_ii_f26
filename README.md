@@ -27,8 +27,10 @@ Week folders mirror the Canvas modules, so `week-04/` holds exactly what is taug
 week 4. The folder *names* never change between offerings — only their contents move
 when the schedule shifts.
 
-`notebooks/scripts/` holds figure scripts shared by notebooks in different weeks;
-`notebooks/extras/` holds notebooks not currently on the schedule.
+`notebooks/scripts/` holds figure scripts shared by notebooks in different weeks.
+Each week may also carry a `supplemental/` folder: material that belongs to that week's
+topic but is **not taught and not graded**. The weekly completion check scans week folders
+non-recursively, so anything in `supplemental/` is outside it by construction.
 
 ## Notebooks
 
@@ -48,6 +50,7 @@ notebooks — see [docs/getting-started.md](docs/getting-started.md) and
 ### Week 3 — Sampling and regression
 * [Intro to sampling](notebooks/week-03/01-intro-to-sampling.ipynb) — rejection and importance sampling
 * [Intro to regression](notebooks/week-03/02-intro-to-regression.ipynb) — linear regression in a generative framing
+* *supplemental:* [Boltzmann, Ising, Metropolis](notebooks/week-03/supplemental/boltzmann-ising-metropolis.ipynb) — statistical-mechanics motivation for Markov chains
 
 ### Week 4 — Gaia, frequentist and Bayesian analysis
 * [Solar neighborhood with Gaia](notebooks/week-04/01-solar-neighborhood-gaia.ipynb) — Gaia data and an observational H-R diagram
@@ -55,39 +58,36 @@ notebooks — see [docs/getting-started.md](docs/getting-started.md) and
 * [Bayes](notebooks/week-04/03-bayes.ipynb) — priors, posteriors, and Bayesian inference
 * [battleship-priors.pdf](notebooks/week-04/battleship-priors.pdf) — in-class activity on priors
 
-### Week 5 — NumPyro
+### Week 5 — NumPyro and model building
 * [Intro to NumPyro](notebooks/week-05/01-intro-to-numpyro.ipynb) — JAX and NumPyro for probabilistic modeling and efficient MCMC
 * [Modeling outliers](notebooks/week-05/02-modeling-outliers.ipynb) — a mixture model for outliers in linear regression
+* [CO2 at Mauna Loa](notebooks/week-05/03-co2-mauna-loa.ipynb) — progressively richer models of atmospheric CO2
 
-### Week 6 — Model building, intro to ML
-* [CO2 at Mauna Loa](notebooks/week-06/01-co2-mauna-loa.ipynb) — progressively richer models of atmospheric CO2
-* [Intro to machine learning](notebooks/week-06/02-intro-to-ml-gaia.ipynb) — ML concepts and vocabulary, rephrasing regression
+### Week 6 — Into machine learning, and the first classifier
+* [Intro to machine learning](notebooks/week-06/01-intro-to-ml-gaia.ipynb) — ML concepts and vocabulary, rephrasing regression
+* [Logistic regression](notebooks/week-06/02-logistic-regression.ipynb) — binary classification, built from scratch on 2-D synthetic data
+* *supplemental:* [Logistic regression on SDSS](notebooks/week-06/supplemental/logistic-regression-sdss.ipynb) — the same method on real survey photometry
 
-### Week 7 — Logistic regression, and superconductivity
-* [Logistic regression](notebooks/week-07/01-logistic-regression.ipynb) — binary classification, built from scratch on 2-D synthetic data
-* [Superconductivity](notebooks/week-07/02-superconductivity.ipynb) — what Tc is and why predicting it is an open problem; 81 real features, chemical families, and classifying about the 40 K BCS ceiling. Introduces the dataset used by the final project.
+### Week 7 — Multiclass, neural networks, superconductivity
+* [Superconductivity](notebooks/week-07/01-superconductivity.ipynb) — what Tc is and why predicting it is an open problem; 81 real features, chemical families, and classifying about the 40 K BCS ceiling. Introduces the dataset used by the final project.
+* [Multiclass classification](notebooks/week-07/02-multiclass-classification.ipynb) — one-vs-all beyond two classes
+* [Intro to neural networks](notebooks/week-07/03-intro-to-neural-networks.ipynb)
 
-### Week 8 — Multiclass classification and neural networks
-* [Multiclass classification](notebooks/week-08/01-multiclass-classification.ipynb) — one-vs-all beyond two classes
-* [Intro to neural networks](notebooks/week-08/02-intro-to-neural-networks.ipynb)
-* [Intro to Flax](notebooks/week-08/03-intro-to-flax.ipynb) — a dense layer used for linear regression
-* [Dense NN on MNIST](notebooks/week-08/04-dense-nn-mnist.ipynb) — classifying handwritten digits
-* [Dense NN on M4](notebooks/week-08/05-dense-nn-m4.ipynb) — identifying cluster members from Gaia observations
+### Week 8 — Networks, in practice
+* [Intro to Flax](notebooks/week-08/01-intro-to-flax.ipynb) — a dense layer used for linear regression
+* [Dense NN on MNIST](notebooks/week-08/02-dense-nn-mnist.ipynb) — classifying handwritten digits; the worked example HW6 builds on
+* [Intro to CNNs](notebooks/week-08/03-intro-to-cnns.ipynb)
+* *supplemental:* [Dense NN on M4](notebooks/week-08/supplemental/dense-nn-m4.ipynb) — cluster members from Gaia; the same task HW6 sets, kept as reference
 
-### Week 9 — Convolutional neural networks, and into signal processing
-* [Intro to CNNs](notebooks/week-09/01-intro-to-cnns.ipynb)
-* [Volcanoes on Venus](notebooks/week-09/02-venus-volcanoes.ipynb) — classifying Magellan radar images
-* [Intro to signal processing](notebooks/week-09/03-intro-to-signal-processing.ipynb) — time series and the discrete Fourier transform, derived from scratch
+### Week 9 — Signal processing
+* [Intro to signal processing](notebooks/week-09/01-intro-to-signal-processing.ipynb) — time series and the discrete Fourier transform, derived from scratch
+* *supplemental:* [Volcanoes on Venus](notebooks/week-09/supplemental/venus-volcanoes.ipynb) — a CNN on Magellan radar images
 
-### Week 10 — Time series and signal processing
+### Week 10 — Time series and filtering
 * [Frequency resolution & windowing](notebooks/week-10/01-frequency-resolution-windowing.ipynb) — resolution, windowing, spectrograms
 * [Filters, Welch method, pulsars](notebooks/week-10/02-filters-welch-pulsars.ipynb)
-* [Notch filters & LIGO data](notebooks/week-10/03-notch-filters-ligo.ipynb) — Gaussian noise and real interferometer data
-
-### Not currently scheduled
-See [notebooks/extras/](notebooks/extras) — the Boltzmann/Ising notebook and a
-gravitational-wave posterior notebook, both written but not taught in the most
-recent offering.
+* *supplemental:* [Notch filters & LIGO data](notebooks/week-10/supplemental/notch-filters-ligo.ipynb) — Gaussian noise and real interferometer data
+* *supplemental:* [GW posterior on a grid](notebooks/week-10/supplemental/gw-posterior-pdf.ipynb) — inferring black hole properties; needs `pycbc` and `healpy`, which are not in requirements.txt
 
 ## Homework
 

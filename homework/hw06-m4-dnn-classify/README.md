@@ -7,16 +7,22 @@ Everything you need is in the `data/` directory of this repo:
 - `m4_gaia_source.csv.gz` — the Gaia catalogue of the field containing M4 (~495,000 stars)
 - `NGC6121-1.dat` — the list of known M4 members, used to build your labels
 
-These are the same files used in `notebooks/week-08/05-dense-nn-m4.ipynb`, so the loading
-code there will work here.
+Loading a 495,000-row catalogue and building labels from a membership list is fiddly and is
+not the point of this assignment. If you get stuck on it,
+`notebooks/week-08/supplemental/dense-nn-m4.ipynb` does exactly that on these files —
+it is supplemental, not something we covered in class, and it is there to read.
 
 ## The task
 
 Demonstrate the use of a densely connected neural network, like the one we trained on the
-MNIST data set, for classifying stars in the M4 cluster using Gaia's measurements of stars'
-locations on the sky (right ascension and declination). This is basically a repeat of what
-we covered in class, but this time I want you to even out the training set to include
-roughly equal numbers of M4 members and non-members.
+MNIST data set in `notebooks/week-08/02-dense-nn-mnist.ipynb`, for classifying stars in the
+M4 cluster using Gaia's measurements of stars' locations on the sky (right ascension and
+declination).
+
+The method is the one from class; the data is not. Carrying a method to a new dataset is
+most of what data analysis is, and the differences are where the work is — in particular,
+even out the training set so it holds roughly equal numbers of M4 members and non-members,
+which MNIST never made you think about.
 
 1. What training and validation accuracies are you able to achieve?
 
