@@ -65,3 +65,6 @@ Releases tab, not the Actions tab.**
 ## Graduate Students
 
 4. Revisit the importance sampling example from the Intro to Sampling notebook from class.  There we demonstrated the use of importance sampling to estimate the expectation value of some function of our random variable.  We could also use the weights we computed to probabilistically choose samples from the sampling distribution to keep, in an effort to "reweigh" the sampling distribution to correspond to the target distribution.  Try to implement this, and see if your resampled distribution's histogram matches the target distribution's probability density function.
+
+    This one is read by hand, not checked automatically. Put the histogram and your
+    conclusion — does it match, and if not, why not — in your written answers in Canvas.
