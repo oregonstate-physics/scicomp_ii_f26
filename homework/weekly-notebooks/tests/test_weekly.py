@@ -20,10 +20,21 @@ tools/build_weekly_manifest.py. Fix bugs in the template, not here.
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+# ROOT is the repository being checked; MANIFEST always sits beside this file.
+#
+# Normally that repository is the one this file lives in (tests/ is one level
+# down), and that is the only case a student ever runs.
+#
+# SCICOMP_REPO exists for the instructor's Classroom 50 escape hatch (REVAMP_NOTES
+# Part 35): a fresh copy of this file and its manifest is run from the grading
+# bundle, which sits OUTSIDE the student's checkout, so it has to be told where
+# the work is. The student's own copy froze when they accepted; the bundle copy
+# can be updated mid-term. Unset, nothing below behaves any differently.
+ROOT = Path(os.environ.get("SCICOMP_REPO") or Path(__file__).resolve().parent.parent).resolve()
 MANIFEST = Path(__file__).resolve().parent / "manifest.json"
 
 
