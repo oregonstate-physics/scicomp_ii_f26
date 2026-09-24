@@ -7,11 +7,10 @@ Much of this material derives from notebooks and activities developed by **Ben F
 for his scientific computing class at the University of Oregon and by **Stephen Taylor**
 for his astrostatistics class at Vanderbilt.
 
-> **This is the perennial source repo.** It is year-agnostic and keeps notebook outputs.
-> The public per-term student copy is *generated* from it — see `tools/make_student_copy.py`.
-> Never edit the student copy directly.
 
 New here? Start with [docs/getting-started.md](docs/getting-started.md).
+
+Material is added and corrected during the term — `git pull` for the current version.
 
 ## Layout
 
@@ -21,7 +20,6 @@ New here? Start with [docs/getting-started.md](docs/getting-started.md).
 | `homework/` | one self-contained folder per assignment, numbered to match Canvas |
 | `data/` | shared datasets (provenance documented below) |
 | `docs/` | orientation material |
-| `tools/` | instructor tooling — excluded from the student copy |
 
 Week folders mirror the Canvas modules, so `week-04/` holds exactly what is taught in
 week 4. The folder *names* never change between offerings — only their contents move
@@ -219,8 +217,7 @@ python3 tools/build_venus_dataset.py
 
 **Provenance is deliberately withheld here.** This is the dataset for the HW7 search
 exercise, and knowing where it came from would give away what is in it. The full source,
-the original filename, and the answer are documented in
-`tools/anonymize_filterbank.py` (instructor-only) and are revealed after the assignment.
+the original filename, and the answer are withheld until after the assignment.
 
 The header has had its pointing coordinates and original filename removed for the same
 reason. Everything needed for the analysis — `nchans`, `fch1`, `foff`, `tsamp`, `nbits`,
