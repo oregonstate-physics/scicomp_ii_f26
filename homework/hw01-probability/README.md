@@ -30,6 +30,10 @@ submit.answer("iq_one_in_million", ...)     # part 4
 That writes `answers.json`.  **Commit it along with your notebook** — a checker reads it
 on every push and tells you whether each number came out in a plausible range.
 
+**PH 564:** there are four more answers to record, from the graduate question — see
+[Graduate Students](#graduate-students) below.  Your checker asks for all thirteen, so it
+will report the four as missing until you add them.
+
 You can run the same checks yourself at any time:
 
 ```

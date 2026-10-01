@@ -165,6 +165,31 @@ def _spec() -> dict:
     return json.loads(EXPECTED.read_text())
 
 
+def _grad_only() -> set[str]:
+    """Keys that belong to the graduate question, on the graduate rule set only.
+
+    The undergraduate rules have no such keys and this is empty there. Without
+    it the four graduate answers appear among the other nine in alphabetical
+    order, and a 564 student who has done the required work reads them as the
+    checker asking for something the README never mentioned.
+    """
+    return set(_spec().get("grad_only", ()))
+
+
+def _label(keys: list[str]) -> str:
+    """Render missing keys, calling out the graduate ones as a separate group."""
+    grad = _grad_only()
+    ours = [k for k in keys if k not in grad]
+    theirs = [k for k in keys if k in grad]
+    see = "see 'Graduate Students' in the README"
+    if ours and theirs:
+        return (f"{', '.join(ours)}, and from the graduate question ({see}): "
+                f"{', '.join(theirs)}")
+    if theirs:
+        return f"{', '.join(theirs)} -- these are the graduate question's ({see})"
+    return ", ".join(ours)
+
+
 def _read_answers() -> dict:
     path = find_answers()
     return json.loads(path.read_text()) if path else {}
@@ -205,7 +230,7 @@ def test_answers_file_present():
         "result, then commit the answers.json it writes.")
     data = json.loads(path.read_text())
     missing = sorted(set(_spec()["keys"]) - set(data))
-    assert not missing, "answers.json is missing: " + ", ".join(missing)
+    assert not missing, "answers.json is missing: " + _label(missing)
 
 
 def test_answers_in_range():
@@ -215,7 +240,9 @@ def test_answers_in_range():
     problems = []
     for key, rule in _spec()["keys"].items():
         if key not in data:
-            problems.append(f"{key} was never recorded")
+            why = (" -- graduate question, see 'Graduate Students' in the README"
+                   if key in _grad_only() else "")
+            problems.append(f"{key} was never recorded{why}")
             continue
         try:
             value = float(data[key])
