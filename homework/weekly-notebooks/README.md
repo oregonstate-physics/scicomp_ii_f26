@@ -22,10 +22,11 @@ material appears, `git pull` inside it brings it down.
 
 ## What to do each week
 
-1. **Copy** that week's notebook(s) out of the class repo and into this one:
+1. **Copy** that week's notebook(s) out of the class repo and into the matching folder
+   here — `week-01/` … `week-10/` are already waiting for them:
 
    ```
-   cp ../scicomp_ii_f26/notebooks/week-03/*.ipynb .
+   cp ../scicomp_ii_f26/notebooks/week-03/*.ipynb week-03/
    ```
 
    Copy, not move, and always work on the copy. Editing the class repo directly means
@@ -33,9 +34,14 @@ material appears, `git pull` inside it brings it down.
 2. Work through them — in class, and finish afterwards if you ran out of time.
 3. Commit and push **this** repository.
 
-You can arrange the files however you like. Keep the filenames as they are, but put them
-in `week-03/` folders or leave them all at the top level — the checker searches the whole
-repository by filename.
+**Keep the filenames exactly as they are.** That is the one thing the check depends on:
+it finds each notebook by name, anywhere in the repository. The folders are organisation
+for your benefit — put the files at the top level instead if you prefer, and nothing
+breaks. What does break a week is renaming a notebook, or keeping two copies of the same
+filename in different folders, since then the check may read the wrong one.
+
+(The `.gitkeep` file in each folder is there only so the empty folders exist in git. You
+can ignore it, or delete it once your own files are in.)
 
 ## What is checked
 
