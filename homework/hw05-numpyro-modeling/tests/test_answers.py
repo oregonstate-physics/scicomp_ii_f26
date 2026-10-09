@@ -233,7 +233,10 @@ def test_answers_file_present():
     assert not missing, "answers.json is missing: " + _label(missing)
 
 
-def test_answers_in_range():
+def check_answers_in_range():
+    """Every value at once. Deliberately NOT named test_*: under pytest the
+    per-key cases below carry the points, and collecting this as well would
+    charge one wrong value twice."""
     path = find_answers()
     assert path is not None, "No answers.json -- see the previous check."
     data = json.loads(path.read_text())
@@ -267,8 +270,46 @@ def test_relationships_hold():
     assert not problems, "\n".join(problems)
 
 
+def _value_check(key: str, rule: dict):
+    """One pytest case per recorded answer, so points can be split across them.
+
+    An assignment registered with `"type": "run"` scores on this file's exit
+    code -- all ten points or none -- which is right for a quick check but gives
+    a student who got eight of nine values a zero. Registered with
+    `"type": "python"`, Classroom 50 runs pytest and divides the points over the
+    collected cases, and these are what it collects. Same trick test_weekly.py
+    uses to make one case per week.
+
+    main() does not call these: it runs CHECKS, so what a student sees when they
+    run the file themselves is unchanged.
+    """
+    def case():
+        data = _read_answers()
+        assert data, "No answers.json -- record your results with submit.answer()."
+        if key not in data:
+            why = (" -- graduate question, see 'Graduate Students' in the README"
+                   if key in _grad_only() else "")
+            raise AssertionError(f"{key} was never recorded{why}")
+        try:
+            value = float(data[key])
+        except (TypeError, ValueError):
+            raise AssertionError(f"{key} is not a number")
+        msg = check_value(key, value, rule)
+        assert msg is None, msg
+
+    case.__name__ = f"test_value_{key}"
+    case.__qualname__ = case.__name__
+    case.__doc__ = f"the value recorded for {key}"
+    return case
+
+
+for _key, _rule in _spec()["keys"].items():
+    globals()[f"test_value_{_key}"] = _value_check(_key, _rule)
+del _key, _rule
+
+
 CHECKS = [test_notebook_committed, test_notebook_ran_cleanly,
-          test_answers_file_present, test_answers_in_range,
+          test_answers_file_present, check_answers_in_range,
           test_relationships_hold]
 
 
