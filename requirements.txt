@@ -23,7 +23,11 @@ daft                    # drawing graphical models (week 8)
 # --- Bayesian inference ---
 numpyro
 jax
-arviz
+# arviz 1.0 split into arviz-base/-stats/-plots and changed the API the week-05
+# notebooks use: a numpyro MCMC object is no longer converted implicitly, and
+# plot_trace draws only the chains (plot_trace_dist draws densities too). The
+# notebooks are written for 1.x, so an older arviz fails on them.
+arviz>=1.3
 
 # --- machine learning ---
 scikit-learn
