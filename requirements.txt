@@ -18,7 +18,10 @@ seaborn
 astropy
 astroML
 corner
-daft                    # drawing graphical models (week 8)
+# NOT `daft`: that PyPI name belongs to a distributed dataframe library, and it
+# installs a module called `daft` with no PGM in it. The graphical-model package
+# is daft-pgm, whose module is also `daft` -- the two cannot coexist.
+daft-pgm                # drawing graphical models (weeks 1 and 7)
 
 # --- Bayesian inference ---
 numpyro
