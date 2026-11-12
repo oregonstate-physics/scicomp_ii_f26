@@ -40,6 +40,13 @@ clu                     # training loops for the Flax notebooks (weeks 8-9)
 ml-collections
 tensorflow
 tensorflow-datasets
+# tensorflow-datasets 4.9.10 declares this as `importlib_resources;
+# python_version < "3.9"` but imports it unconditionally, so no resolver installs
+# it on 3.12 and tfds.load('mnist') dies with ModuleNotFoundError as soon as it
+# builds a download manager (week 8, notebooks 02 and 03). etils[epath] does not
+# supply it either -- its epath extra pulls only etils[epy]. Drop this line once
+# tfds fixes the marker.
+importlib_resources
 
 # --- signal processing ---
 gwpy                    # LIGO strain data (week 10); was missing, so
